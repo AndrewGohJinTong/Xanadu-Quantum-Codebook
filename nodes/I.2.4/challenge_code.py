@@ -9,7 +9,9 @@
     Use triple single quotes to enclose the formatted code block.
 """
 
-challenge_code = '''dev = qml.device("default.qubit", wires=3)
+import pennylane as qml
+#challenge_code = '''
+dev = qml.device("default.qubit", wires=3)
 
 @qml.qnode(dev)
 def my_circuit(theta, phi, omega):
@@ -27,5 +29,10 @@ def my_circuit(theta, phi, omega):
 ##################
 
 # FILL IN THE CORRECT CIRCUIT DEPTH
-depth = 0
-'''
+depth = 4
+
+resource_calculator = qml.specs(my_circuit)
+
+# we pass it the same parameters as the original QNode
+theta, phi, omega = 0.1, 0.2, 0.3
+print(resource_calculator(theta, phi, omega))

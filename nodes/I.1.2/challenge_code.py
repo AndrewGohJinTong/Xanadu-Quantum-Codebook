@@ -9,7 +9,10 @@
     Use triple single quotes to enclose the formatted code block.
 """
 
-challenge_code = '''def inner_product(state_1, state_2):
+
+import numpy as np;
+#challenge_code = '''
+def inner_product(state_1, state_2):
     """Compute the inner product between two states.
     
     Args:
@@ -26,7 +29,7 @@ challenge_code = '''def inner_product(state_1, state_2):
 
     # COMPUTE AND RETURN THE INNER PRODUCT
 
-    pass 
+    return np.sum(np.conj(state_1)*state_2);
 
 
 # Test your results with this code
@@ -37,4 +40,3 @@ print(f"<0|0> = {inner_product(ket_0, ket_0)}")
 print(f"<0|1> = {inner_product(ket_0, ket_1)}")
 print(f"<1|0> = {inner_product(ket_1, ket_0)}")
 print(f"<1|1> = {inner_product(ket_1, ket_1)}")
-'''

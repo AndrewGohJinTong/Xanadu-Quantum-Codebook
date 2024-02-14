@@ -9,7 +9,8 @@
     Use triple single quotes to enclose the formatted code block.
 """
 
-challenge_code = '''# Here are the vector representations of |0> and |1>, for convenience
+import numpy as np
+#challenge_code = '''# Here are the vector representations of |0> and |1>, for convenience
 ket_0 = np.array([1, 0])
 ket_1 = np.array([0, 1])
 
@@ -32,5 +33,9 @@ def normalize_state(alpha, beta):
     # CREATE A VECTOR [a', b'] BASED ON alpha AND beta SUCH THAT |a'|^2 + |b'|^2 = 1
     
     # RETURN A VECTOR
-    pass 
-'''
+    
+    coef = np.abs(alpha)**2 + np.abs(beta)**2
+    
+    return np.array([alpha/np.sqrt(coef), beta/np.sqrt(coef)]);
+
+print(normalize_state(1/2, 1/2))

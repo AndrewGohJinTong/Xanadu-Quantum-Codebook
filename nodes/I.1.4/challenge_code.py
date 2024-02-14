@@ -9,7 +9,9 @@
     Use triple single quotes to enclose the formatted code block.
 """
 
-challenge_code = '''U = np.array([[1, 1], [1, -1]]) / np.sqrt(2)
+#challenge_code = '''
+import numpy as np;
+U = np.array([[1, 1], [1, -1]]) / np.sqrt(2)
 
 def apply_u(state):
     """Apply a quantum operation.
@@ -26,5 +28,5 @@ def apply_u(state):
     ##################
 
     # APPLY U TO THE INPUT STATE AND RETURN THE NEW STATE
-    pass
-'''
+    
+    return np.matmul(U, state);

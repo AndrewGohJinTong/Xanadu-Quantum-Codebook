@@ -9,7 +9,10 @@
     Use triple single quotes to enclose the formatted code block.
 """
 
-challenge_code = '''dev = qml.device("default.qubit", wires=3)
+
+import pennylane as qml
+#challenge_code = '''
+dev = qml.device("default.qubit", wires=3)
 
 ##################
 # YOUR CODE HERE #
@@ -17,6 +20,7 @@ challenge_code = '''dev = qml.device("default.qubit", wires=3)
 
 # DECORATE THE FUNCTION BELOW TO TURN IT INTO A QNODE
 
+@qml.QNode(dev)
 def my_circuit(theta, phi, omega):
     qml.RX(theta, wires=0)
     qml.RY(phi, wires=1)
@@ -34,6 +38,4 @@ theta, phi, omega = 0.1, 0.2, 0.3
 ##################
 
 # RUN THE QNODE WITH THE PROVIDED PARAMETERS
-
-
-'''
+my_circuit(theta, phi, omega)

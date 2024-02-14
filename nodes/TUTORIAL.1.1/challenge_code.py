@@ -9,7 +9,7 @@
     Use triple single quotes to enclose the formatted code block.
 """
 
-challenge_code = '''
+'''challenge_code ='''
 def add_numbers(x, y):
     """A simple function to add two numbers.
     
@@ -24,5 +24,4 @@ def add_numbers(x, y):
     ##################
     # YOUR CODE HERE #
     ##################
-
-'''
+    return x + y;

@@ -9,7 +9,9 @@
     Use triple single quotes to enclose the formatted code block.
 """
 
-challenge_code = '''def measure_state(state, num_meas):
+import numpy as np;
+#challenge_code = '''
+def measure_state(state, num_meas):
     """Simulate a quantum measurement process.
 
     Args:
@@ -29,5 +31,10 @@ challenge_code = '''def measure_state(state, num_meas):
 
     # RETURN A LIST OF SAMPLE MEASUREMENT OUTCOMES
  
-    pass
-'''
+    zero_pos = np.abs(state[0])**2;
+    one_pos = np.abs(state[1])**2;
+    
+    
+    
+    return np.random.choice([0,1], num_meas, p=[zero_pos, one_pos]);
+

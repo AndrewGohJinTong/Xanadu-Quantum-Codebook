@@ -9,7 +9,12 @@
     Use triple single quotes to enclose the formatted code block.
 """
 
-challenge_code = '''dev = qml.device("default.qubit", wires=1)
+#challenge_code = '''
+
+import pennylane as qml
+import numpy as np
+
+dev = qml.device("default.qubit", wires=1)
 
 @qml.qnode(dev)
 def apply_u_as_rot(phi, theta, omega):
@@ -21,6 +26,6 @@ def apply_u_as_rot(phi, theta, omega):
     # APPLY A ROT GATE USING THE PROVIDED INPUT PARAMETERS
     
     # RETURN THE QUANTUM STATE VECTOR
+    qml.rot(phi, theta, omega, wire = 0)
 
-    return
-'''
+    return qml.state()

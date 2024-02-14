@@ -9,7 +9,12 @@
     Use triple single quotes to enclose the formatted code block.
 """
 
-challenge_code = '''dev = qml.device("default.qubit", wires=1)
+#challenge_code = '''
+
+import pennylane as qml
+import numpy as np
+
+dev = qml.device("default.qubit", wires=1)
 
 U = np.array([[1, 1], [1, -1]]) / np.sqrt(2)
 
@@ -22,8 +27,8 @@ def apply_u():
 
     # USE QubitUnitary TO APPLY U TO THE QUBIT
     
-
+    qml.QubitUnitary(U, wire=0)
 
     # Return the state
     return qml.state()
-'''
+

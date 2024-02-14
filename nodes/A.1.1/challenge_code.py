@@ -8,8 +8,11 @@
 
     Use triple single quotes to enclose the formatted code block.
 """
+import matplotlib.pyplot as plt
+import pennylane as qml
+import numpy as np
 
-challenge_code = '''n_bits = 4
+challenge_code = n_bits = 4
 dev = qml.device("default.qubit", wires=n_bits)
 
 @qml.qnode(dev)
@@ -26,6 +29,8 @@ def naive_circuit():
         ##################
 
         pass # REPLACE PASS
-
+    
     return qml.probs(wires=range(n_bits))
-'''
+
+qml.draw(naive_circuit)
+

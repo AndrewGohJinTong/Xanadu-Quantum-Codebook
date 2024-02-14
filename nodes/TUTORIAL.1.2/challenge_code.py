@@ -9,7 +9,7 @@
     Use triple single quotes to enclose the formatted code block.
 """
 
-challenge_code = '''
+# challenge_code =
 def find_max(x):
     """A simple function to find the largest value in a numpy array.
 
@@ -23,5 +23,10 @@ def find_max(x):
     ##################
     # YOUR CODE HERE #
     ##################
-
-'''
+    max_number = 0;
+    
+    for i in x :
+        if i > max_number:
+            max_number = i;
+    
+    return max_number;
